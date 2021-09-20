@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import Chat from "./Chat";
+import LoginForm from "./components/LoginForm";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(){
+	const adminUser={
+		password: "admin123"
+	}
+
+	const [user, setUser]= useState({author:""})
+	const [error, setError] = useState("")
+	
+	const Login = details =>{
+		console.log(details);
+
+		if (details.password===adminUser.password){
+			console.log("Logged in");
+			setUser({
+				author: details.author
+			})
+		}
+		else{
+			console.log("Password is wrong!")
+			setError("Password is wrong!");
+		}
+	}
+/*
+	const Logout = () => {
+		setUser({author:"", password:""});
+	}
+*/	
+	return(
+		<div>
+			{(user.author !=="") ? (
+				<Chat Author={user.author}/>
+			): (
+				<LoginForm Login={Login} error={error}/>
+			)}
+		</div> 
+	);
 }
+
 
 export default App;
