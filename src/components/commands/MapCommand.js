@@ -4,6 +4,7 @@ function MapCommand() {
     return (
         <div>
             <h1>The command type is "map"</h1>
+            
         </div>
     )
 }
