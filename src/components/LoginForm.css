@@ -22,6 +22,7 @@ input {
 .form {
   display: block;
   position: relative;
+  padding: 20px;
 }
 
 .form:after {

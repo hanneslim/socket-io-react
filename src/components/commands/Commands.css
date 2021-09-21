@@ -29,6 +29,12 @@
 .link-button:hover {
   background-position: 100% 0%;
 }
+.App {
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 #App {
   height: 100vh;

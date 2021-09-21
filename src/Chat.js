@@ -2,6 +2,7 @@ import TextField from "@material-ui/core/TextField"
 import React, { useEffect, useRef, useState } from "react"
 import io from "socket.io-client"
 import "./Chat.css"
+import "./components/commands/Commands.css"
 import {Link } from "react-router-dom";
 
 function Chat({Author}) {
@@ -47,39 +48,46 @@ function Chat({Author}) {
 	
 
 	return (
-		<div>
+		<div >
+			<div id="form">
+                <div id="form-inner">
 
+					<div className="card">
+						<form id="messengerStyle" onSubmit={onMessageSubmit}>
+							<h1>Messenger</h1>
+							<div className="name-field">
+								<TextField name="author" onChange={(e) => onTextChange(e)} value={state.author} label="Name"/>
+							</div>
+							<div>
+								<TextField
+									name="message"
+									onChange={(e) => onTextChange(e)}
+									value={state.message}
+									id="outlined-multiline-static"
+									variant="outlined"
+									label="Message"
+								/>
+							</div>
+							<button className="link-button">Send Message</button>
+						</form>
+						<div className="render-chat">
+							
+									<h1>Chat Log</h1>
+									{renderChat()}
 
-			<div className="card">
-				<form id="messengerStyle" onSubmit={onMessageSubmit}>
-					<h1>Messenger</h1>
-					<div className="name-field">
-						<TextField name="author" onChange={(e) => onTextChange(e)} value={state.author} label="Name"/>
+						</div>
 					</div>
-					<div>
-						<TextField
-							name="message"
-							onChange={(e) => onTextChange(e)}
-							value={state.message}
-							id="outlined-multiline-static"
-							variant="outlined"
-							label="Message"
-						/>
+
+					<div >
+
+						<Link to="/commands">
+							<button className="link-button">Go to commands!</button>
+						</Link>
 					</div>
-					<button className="link-button">Send Message</button>
-				</form>
-				<div className="render-chat">
-					<h1>Chat Log</h1>
-					{renderChat()}
+
 				</div>
 				
 				
-			</div>
-			<div >
-
-				<Link to="/commands">
-					<button className="link-button">Go to commands!</button>
-				</Link>
 			</div>
 		</div>
 	)
