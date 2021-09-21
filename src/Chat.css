@@ -5,6 +5,7 @@
   min-height: 30rem;
 }
 form {
+  background-color: #fff;
   max-width: 350px;
   border-radius: 5px;
   padding: 20px;

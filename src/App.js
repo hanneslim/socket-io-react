@@ -30,7 +30,7 @@ function App(){
 	}
 */	
 	return(
-		<div>
+		<div className="App">
 			{(user.author !=="") ? (
 				<Chat Author={user.author}/>
 			): (
