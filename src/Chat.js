@@ -47,32 +47,40 @@ function Chat({Author}) {
 	
 
 	return (
-		<div className="card">
-			<form onSubmit={onMessageSubmit}>
-				<h1>Messenger</h1>
-				<div className="name-field">
-					<TextField name="author" onChange={(e) => onTextChange(e)} value={state.author} label="Name"/>
+		<div>
+
+
+			<div className="card">
+				<form id="messengerStyle" onSubmit={onMessageSubmit}>
+					<h1>Messenger</h1>
+					<div className="name-field">
+						<TextField name="author" onChange={(e) => onTextChange(e)} value={state.author} label="Name"/>
+					</div>
+					<div>
+						<TextField
+							name="message"
+							onChange={(e) => onTextChange(e)}
+							value={state.message}
+							id="outlined-multiline-static"
+							variant="outlined"
+							label="Message"
+						/>
+					</div>
+					<button className="link-button">Send Message</button>
+				</form>
+				<div className="render-chat">
+					<h1>Chat Log</h1>
+					{renderChat()}
 				</div>
-				<div>
-					<TextField
-						name="message"
-						onChange={(e) => onTextChange(e)}
-						value={state.message}
-						id="outlined-multiline-static"
-						variant="outlined"
-						label="Message"
-					/>
-				</div>
-				<button>Send Message</button>
-			</form>
-			<div className="render-chat">
-				<h1>Chat Log</h1>
-				{renderChat()}
+				
+				
 			</div>
-			<Link to="/commands">
-				<button>Go to commands!</button>
-			</Link>
-			
+			<div >
+
+				<Link to="/commands">
+					<button className="link-button">Go to commands!</button>
+				</Link>
+			</div>
 		</div>
 	)
 }

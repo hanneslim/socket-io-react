@@ -4,12 +4,37 @@
   margin: 30px;
   min-height: 30rem;
 }
-form {
+#messengerStyle {
   background-color: #fff;
   max-width: 350px;
   border-radius: 5px;
   padding: 20px;
   box-shadow: 0px 3px 24px -8px rgba(0, 0, 0, 0.75);
+}
+
+.link-button {
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    to right,
+    #ffce00 50%,
+    #ffce00 50%,
+    #fe4880
+  );
+  background-size: 200%;
+  background-position: 0%;
+  transition: 0.4s;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+.link-button:hover {
+  background-position: 100% 0%;
 }
 
 .name-field {

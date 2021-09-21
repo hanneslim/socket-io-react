@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import DatePicker from 'react-date-picker';
+import "./Commands.css"
 
 function DateCommand({date}) {
 
@@ -14,16 +15,22 @@ function DateCommand({date}) {
 
 
     return (
-        <div>
-            <div>
-                <h2>Please choose a date:</h2>
+        <div id="App">
+
+            <div id="form">
+                <div id="form-inner">
+                    <h2>Please choose a date:</h2>
+                    
+                    <div >
+                        <DatePicker
+                        onChange={onChange}
+                        value={value}
+                        />
+                    </div>
+
+                </div>
             </div>
-            <div>
-                <DatePicker
-                onChange={onChange}
-                value={value}
-                />
-            </div>
+            
 
         </div>
     )
