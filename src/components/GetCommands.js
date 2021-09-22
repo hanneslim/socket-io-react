@@ -6,12 +6,14 @@ import DateCommand from "./commands/DateCommand"
 import MapCommand from "./commands/MapCommand"
 import RateCommand from "./commands/RateCommand"
 
+//This component handles the different server commands for the widgets
 
 function GetCommands () {
 
     const [commandData, setCommandData ] = useState({})
     const socketRef = useRef()
 
+    //connection to the server
 	useEffect(
 		() => {
 			socketRef.current = io.connect("https://demo-chat-server.on.ag/")
@@ -31,6 +33,7 @@ function GetCommands () {
 
     var render;
 
+    //Depending on the type of data from the server the corresponding widget gets rendered
     if(typeData==="map"){
         const lat=commandData.command?.data?.lat 
         const lng=commandData.command?.data?.lng     
@@ -43,6 +46,7 @@ function GetCommands () {
         const date= commandData.command?.data
         render= <DateCommand date={date}/>}
     else {render=<RateCommand/>}
+
 
 
     return (

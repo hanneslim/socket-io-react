@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Rating } from 'react-simple-star-rating'
+import FancyButton from '../FancyButton'
 import "./Commands.css"
+
+//A component for rating
 
 function RateCommand() {
     const [rating, setRating] = useState(0) // initial rating value
@@ -26,7 +29,7 @@ function RateCommand() {
           </div> 
           <div id="form-group">
                   <Link to="/">
-          <button className="link-button">Go back to Login</button>
+                  <FancyButton Text="Go back to Login"/>
         </Link>
               </div>
 

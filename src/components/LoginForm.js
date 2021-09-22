@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import "./LoginForm.css"
 
+//This component contains the input elements for the login mask
+
 function LoginForm({Login, error}) {
     const[details, setDetails]= useState({author: "", password:""})
 

@@ -1,7 +1,10 @@
 import React from 'react'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 import { Link } from 'react-router-dom'
+import FancyButton from '../FancyButton'
 import "./Commands.css"
+
+//A component to display a map with a marker
 
 function MapCommand({lat,lng}) {
 
@@ -30,7 +33,7 @@ function MapCommand({lat,lng}) {
                         </div>
                         <div>
                             <Link to="/">
-                            <button className="link-button">Go back to Login</button>
+                            <FancyButton Text="Go back to Login"/>
                         </Link>
                         </div>
                 </div>

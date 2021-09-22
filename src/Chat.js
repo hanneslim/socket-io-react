@@ -4,6 +4,9 @@ import io from "socket.io-client"
 import "./Chat.css"
 import "./components/commands/Commands.css"
 import {Link } from "react-router-dom";
+import FancyButton from "./components/FancyButton"
+
+//You can communicate here with the server and send messages
 
 function Chat({Author}) {
 	const [ state, setState ] = useState({ message: "", author: Author })
@@ -11,6 +14,7 @@ function Chat({Author}) {
 
 	const socketRef = useRef()
 
+	//conncection to the server
 	useEffect(
 		() => {
 			socketRef.current = io.connect("https://demo-chat-server.on.ag/")
@@ -33,6 +37,7 @@ function Chat({Author}) {
 		setState({ message: "", author })
 	}
 
+	//render the response messages from the server
 	const renderChat = () => {
 		return chat.map(({ author, message }, index) => (
 			<div key={index}>
@@ -47,6 +52,12 @@ function Chat({Author}) {
 
 	
 
+	/*
+	Two TextFields for author and message
+	One Button to send the message
+	One Button to go to the server command widgets
+	The rest is just for styling
+	*/
 	return (
 		<div >
 			<div id="form">
@@ -81,7 +92,7 @@ function Chat({Author}) {
 					<div >
 
 						<Link to="/commands">
-							<button className="link-button">Go to commands!</button>
+							<FancyButton Text="Go to commands!"/>
 						</Link>
 					</div>
 

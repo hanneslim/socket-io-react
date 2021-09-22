@@ -1,10 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import FancyButton from '../FancyButton';
 import "./Commands.css"
 
 function refreshPage(){ 
     window.location.reload(); 
 }
+
+//A widget which simply asks you if you want to stay or leave the page
 
 function CompleteCommand({button1Text, button2Text}) {
     return (
@@ -17,7 +20,7 @@ function CompleteCommand({button1Text, button2Text}) {
 
                     <div id="form-group">
                         <Link to="/">
-                        <button className="link-button">{button1Text}</button>
+                        <FancyButton Text={button1Text}/>
                     </Link>
                     </div>
                     <div id="form-group">
